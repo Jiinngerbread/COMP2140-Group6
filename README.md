@@ -1,2 +1,2 @@
-# COMP2140-Groupp6
+# COMP2140-Group6
 The final implementation for the vain fitness system 
