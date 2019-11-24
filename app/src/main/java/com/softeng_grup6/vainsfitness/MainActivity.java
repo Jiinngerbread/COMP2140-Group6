@@ -14,26 +14,27 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.softeng_grup6.vainsfitness.ui.main.SectionsPagerAdapter;
+import com.softeng_grup6.vainsfitness.ui.main.TabAdapter;
+import com.softeng_grup6.vainsfitness.ui.main.tab1Fragment;
+import com.softeng_grup6.vainsfitness.ui.main.tab2Fragment;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TabAdapter adapter;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        viewPager.setAdapter(sectionsPagerAdapter);
-        TabLayout tabs = findViewById(R.id.tabs);
-        tabs.setupWithViewPager(viewPager);
-        FloatingActionButton fab = findViewById(R.id.fab);
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        viewPager = (ViewPager) findViewById(R.id.view_pager);
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        adapter = new TabAdapter(getSupportFragmentManager());
+        adapter.addFragment(new tab1Fragment(), "Tab 1");
+        adapter.addFragment(new tab2Fragment(), "Tab 2");
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
+
+
 }
