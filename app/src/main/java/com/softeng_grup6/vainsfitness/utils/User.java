@@ -1,20 +1,43 @@
 package com.softeng_grup6.vainsfitness.utils;
 
+import com.google.firebase.firestore.DocumentReference;
+
 public class User {
     private String frstname = null;
-    private  String lastname = null;
+    private String lastname = null;
     private int age = 0;
     private Date creation_date = null;
     private String username = null;
     private String password = null;
+    private String email = null;
+    private DocumentReference id = null;
 
-    public User(String frstname, String lastname, int age, Date creation_date, String username, String password) {
+    public DocumentReference getId() {
+        return id;
+    }
+
+    public void setId(DocumentReference id) {
+        this.id = id;
+    }
+
+    public User(String frstname, String lastname, int age, Date creation_date, String username, String password, String email) {
         this.frstname = frstname;
         this.lastname = lastname;
         this.age = age;
         this.creation_date = creation_date;
         this.username = username;
         this.password = password;
+        this.email = email;
+    }
+
+    public User(){};
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getFrstname() {

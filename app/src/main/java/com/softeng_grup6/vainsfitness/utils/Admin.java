@@ -6,8 +6,8 @@ public class Admin extends User{
     private int numberOfClient = 0;
     private ArrayList<String> clientsUsernames = new ArrayList<String>();
 
-    public Admin(String frstname, String lastname, int age, Date creation_date, String username, String password, int numberOfClient, ArrayList<String> clientsUsernames) {
-        super(frstname, lastname, age, creation_date, username, password);
+    public Admin(String frstname, String lastname, int age, Date creation_date, String username, String password,String email, int numberOfClient, ArrayList<String> clientsUsernames) {
+        super(frstname, lastname, age, creation_date, username, password,email);
         this.numberOfClient = numberOfClient;
         this.clientsUsernames = clientsUsernames;
     }

@@ -13,10 +13,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.firebase.firestore.DocumentReference;
+import com.softeng_grup6.vainsfitness.listeners.AuthHandler;
+import com.softeng_grup6.vainsfitness.listeners.AuthListener;
+import com.softeng_grup6.vainsfitness.managers.UserManager;
 import com.softeng_grup6.vainsfitness.ui.main.SectionsPagerAdapter;
 import com.softeng_grup6.vainsfitness.ui.main.TabAdapter;
 import com.softeng_grup6.vainsfitness.ui.main.tab1Fragment;
 import com.softeng_grup6.vainsfitness.ui.main.tab2Fragment;
+import com.softeng_grup6.vainsfitness.utils.User;
 
 public class MainActivity extends AppCompatActivity {
 

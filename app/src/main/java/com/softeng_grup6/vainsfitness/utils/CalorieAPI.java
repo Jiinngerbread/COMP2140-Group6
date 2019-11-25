@@ -2,9 +2,7 @@ package com.softeng_grup6.vainsfitness.utils;
 
 import android.content.Context;
 import android.widget.Toast;
-import com.android.volley.RequestQueue;
 
-import com.android.volley.toolbox.Volley;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.Expose;
@@ -30,12 +28,10 @@ public class CalorieAPI {
     private String app_id = "79e932c0";
     private final Context context;
     public static String text_r = "fsd";
-    RequestQueue queue;
 
 
     public CalorieAPI(Context context){
         this.context = context;
-        queue = Volley.newRequestQueue(context);
     }
 
     public void getCalorie(final String from, ArrayList<String> food_items) {
@@ -60,7 +56,6 @@ public class CalorieAPI {
                     Toast.makeText(context, "something:" + response.code() + " message: " + response.message(), Toast.LENGTH_SHORT).show();
                     Calories calories = (Calories) response.body();
                     tab1Fragment.changeText(calories.getCalories().toString());
-
                 }
             }
             @Override
@@ -75,11 +70,9 @@ class Calories{
     @SerializedName("calories")
     @Expose
     private Integer calories;
-
     public Integer getCalories() {
         return calories;
     }
-
     public void setCalories(Integer calories) {
         this.calories = calories;
     }

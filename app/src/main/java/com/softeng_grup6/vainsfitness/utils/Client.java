@@ -4,8 +4,8 @@ public class Client extends User{
     private double weight = 0;
     private double height =0;
 
-    public Client(String frstname, String lastname, int age, Date creation_date, String username, String password, double weight, double height) {
-        super(frstname, lastname, age, creation_date, username, password);
+    public Client(String frstname, String lastname, int age, Date creation_date, String username,String email, String password, double weight, double height) {
+        super(frstname, lastname, age, creation_date, username, password,email);
         this.weight = weight;
         this.height = height;
     }
