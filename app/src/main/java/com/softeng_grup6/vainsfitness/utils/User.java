@@ -10,6 +10,7 @@ public class User {
     private String username = null;
     private String password = null;
     private String email = null;
+    private String gender = null;
     private DocumentReference id = null;
 
     public DocumentReference getId() {

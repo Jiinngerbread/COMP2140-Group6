@@ -1,45 +1,32 @@
 package com.softeng_grup6.vainsfitness;
 
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
-
+import androidx.annotation.Nullable;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-
-import com.google.firebase.firestore.DocumentReference;
-import com.softeng_grup6.vainsfitness.listeners.AuthHandler;
-import com.softeng_grup6.vainsfitness.listeners.AuthListener;
-import com.softeng_grup6.vainsfitness.managers.UserManager;
-import com.softeng_grup6.vainsfitness.ui.main.SectionsPagerAdapter;
+import com.softeng_grup6.vainsfitness.ui.main.ConsumptionList;
+import com.softeng_grup6.vainsfitness.ui.main.Home_Profile_Fragment;
+import com.softeng_grup6.vainsfitness.ui.main.ProgressReport;
 import com.softeng_grup6.vainsfitness.ui.main.TabAdapter;
-import com.softeng_grup6.vainsfitness.ui.main.tab1Fragment;
-import com.softeng_grup6.vainsfitness.ui.main.tab2Fragment;
-import com.softeng_grup6.vainsfitness.utils.User;
 
 public class MainActivity extends AppCompatActivity {
-
     private TabAdapter adapter;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         adapter = new TabAdapter(getSupportFragmentManager());
-        adapter.addFragment(new tab1Fragment(), "Tab 1");
-        adapter.addFragment(new tab2Fragment(), "Tab 2");
+        adapter.addFragment(new Home_Profile_Fragment(), "Home");
+        adapter.addFragment(new ConsumptionList(), "Meals");
+        adapter.addFragment(new ProgressReport(), "Report");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
     }
-
-
 }

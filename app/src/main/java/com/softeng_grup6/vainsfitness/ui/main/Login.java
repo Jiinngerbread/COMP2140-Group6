@@ -34,6 +34,7 @@ public class Login extends AppCompatActivity {
         pswd = (EditText)findViewById(R.id.usrp);
         slogin = (Button)findViewById(R.id.login);
         authenticator = new UserManager(getBaseContext());
+        authenticator.authenticate("a@a.com","bbbb");
 
         slogin.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.0"
     defaultConfig {
         applicationId "com.softeng_grup6.vainsfitness"
-        minSdkVersion 17
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -32,5 +32,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.6.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
     implementation 'com.google.firebase:firebase-firestore:21.3.0'
+    implementation 'com.github.androdocs:Android-Circle-ImageView:0.1.0'
+    implementation 'com.github.jakob-grabner:Circle-Progress-View:1.4'
+
 }
 apply plugin: 'com.google.gms.google-services'

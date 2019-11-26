@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add User"
+                android:layout_margin = "10dp"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="First Name:"
+                    android:padding="5dp"
+                    android:textSize="18dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="italic"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textColorHint="#ccc"
+                    android:padding="5dp"
+                    android:hint="Enter the user first name"
+                    android:id="@+id/fname"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Last Name:"
+                    android:padding="5dp"
+                    android:textSize="18dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="italic"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textColorHint="#ccc"
+                    android:padding="5dp"
+                    android:hint="Enter the user last name"
+                    android:id="@+id/lname"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Age:"
+                    android:padding="5dp"
+                    android:textSize="18dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="italic"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textColorHint="#ccc"
+                    android:padding="5dp"
+                    android:hint="Enter the user age"
+                    android:inputType="number"
+                    android:id="@+id/age"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gender:"
+                    android:padding="5dp"
+                    android:textSize="18dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="italic"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textColorHint="#ccc"
+                    android:padding="5dp"
+                    android:hint="Enter the user gender (male /female)"
+                    android:id="@+id/gender"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email:"
+                    android:padding="5dp"
+                    android:textSize="18dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="italic"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textColorHint="#ccc"
+                    android:padding="5dp"
+                    android:hint="Enter the user email"
+                    android:id="@+id/email"
+                    android:inputType="textEmailAddress"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Username:"
+                    android:padding="5dp"
+                    android:textSize="18dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="italic"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textColorHint="#ccc"
+                    android:padding="5dp"
+                    android:hint="Enter the user username"
+                    android:id="@+id/username"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Password:"
+                    android:padding="5dp"
+                    android:textSize="18dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="italic"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textColorHint="#ccc"
+                    android:padding="5dp"
+                    android:hint="Enter the user password"
+                    android:id="@+id/pswd"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Add"
+                    android:layout_margin="20dp"
+                    android:padding="5dp"
+                    android:id="@+id/add"
+                    android:layout_weight="1"/>
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Back"
+                    android:layout_margin="20dp"
+                    android:padding="5dp"
+                    android:id="@+id/back"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

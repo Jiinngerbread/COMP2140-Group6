@@ -28,6 +28,18 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ui.main.AddMeal"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".ui.main.AddUser"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".ui.main.AddMealPlan"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".ui.main.RemoveMeal"
+            android:label="@string/app_name" />
     </application>
 
 </manifest>

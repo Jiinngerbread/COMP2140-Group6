@@ -8,7 +8,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.softeng_grup6.vainsfitness.managers.NetworkManager;
-import com.softeng_grup6.vainsfitness.ui.main.tab1Fragment;
 
 import java.util.ArrayList;
 
@@ -55,7 +54,6 @@ public class CalorieAPI {
                 if(from.equals("tab1")) {
                     Toast.makeText(context, "something:" + response.code() + " message: " + response.message(), Toast.LENGTH_SHORT).show();
                     Calories calories = (Calories) response.body();
-                    tab1Fragment.changeText(calories.getCalories().toString());
                 }
             }
             @Override

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Meal"
+                android:layout_margin = "10dp"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:id="@+id/title"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Details of the Meal \n======================="
+                android:layout_marginTop= "5dp"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:textStyle="italic"
+                android:id="@+id/meal_display_title"/>
+
+            <TextView
+                android:id="@+id/meal_display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:minHeight="200dp"
+                android:padding="5dp"
+                android:text="Meal name: apple, carrot"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="==============================="
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:textStyle="italic"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="enter the meal name"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:layout_margin="5dp"
+                android:id="@+id/meal_name"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/add_desc">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Description: "
+                    android:padding="5dp"
+                    android:textSize="20dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="normal"
+                    android:id="@+id/meal_desc_title"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:hint="enter the meal method"
+                    android:textColor="#ffffff"
+                    android:textColorHint="#ffffff"
+                    android:layout_margin="5dp"
+                    android:id="@+id/meal_meth">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Add"
+                    android:layout_margin="20dp"
+                    android:padding="5dp"
+                    android:id="@+id/add"
+                    android:layout_weight="1"/>
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Done"
+                    android:layout_margin="20dp"
+                    android:padding="5dp"
+                    android:id="@+id/done"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+            <Button style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Add From Meal Plan"
+                android:layout_margin="20dp"
+                android:padding="5dp"
+                android:id="@+id/add_from_mealplan"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
