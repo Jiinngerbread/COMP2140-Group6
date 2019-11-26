@@ -6,13 +6,14 @@ public class Meal {
 
     private String name = null;
     private ArrayList<String> food_items= new ArrayList<String>();
-    private Double Calorie = null;
+    private int Calorie = 0;
 
-    public Meal(String name, ArrayList<String> food_items, Double calorie) {
+    public Meal(String name, ArrayList<String> food_items, int calorie) {
         this.name = name;
         this.food_items = food_items;
         Calorie = calorie;
     }
+    public Meal(){}
 
     public String getName() {
         return name;
@@ -30,11 +31,11 @@ public class Meal {
         this.food_items = food_items;
     }
 
-    public Double getCalorie() {
+    public int getCalorie() {
         return Calorie;
     }
 
-    public void setCalorie(Double calorie) {
+    public void setCalorie(int calorie) {
         Calorie = calorie;
     }
 

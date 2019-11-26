@@ -8,6 +8,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.softeng_grup6.vainsfitness.managers.NetworkManager;
+import com.softeng_grup6.vainsfitness.ui.main.AddMeal;
 
 import java.util.ArrayList;
 
@@ -46,19 +47,27 @@ public class CalorieAPI {
         jsonbody.add("ingr", foodItems);
 
         Call call = calorieAPint.getCalorie(jsonbody,app_id, app_key);
-
         //This is the line which actually sends a network request. Calling enqueue() executes a call asynchronously. It has two callback listeners which will invoked on the main thread
         call.enqueue(new Callback() {
             @Override
             public void onResponse(Call call, Response response) {
-                if(from.equals("tab1")) {
-                    Toast.makeText(context, "something:" + response.code() + " message: " + response.message(), Toast.LENGTH_SHORT).show();
-                    Calories calories = (Calories) response.body();
+                if(from.equals("addmealplan")) {
+//                    Toast.makeText(context, "Recievd and ok", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(context, "something:" + response.code() + " message: " + response.message(), Toast.LENGTH_SHORT).show();
+                    if(response.code() == 200){
+                        Calories calories = (Calories) response.body();
+                        //Toast.makeText(context, "Calories: "+calories.getCalories(), Toast.LENGTH_SHORT).show();
+                        AddMeal.calorieHandler.fetchCalorieSuccess(calories.getCalories());
+                    }else{
+                        AddMeal.calorieHandler.fetchCAlorieFail();
+                        Toast.makeText(context, "Invalid food items entered, cant process", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
             @Override
             public void onFailure(Call call, Throwable t) {
-                Toast.makeText(context, "Error is " + t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Network Problem", Toast.LENGTH_SHORT).show();
+                AddMeal.calorieHandler.fetchCAlorieFail();
             }
         });
     }

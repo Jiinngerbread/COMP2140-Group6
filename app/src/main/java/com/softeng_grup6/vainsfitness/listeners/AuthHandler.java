@@ -2,6 +2,8 @@ package com.softeng_grup6.vainsfitness.listeners;
 
 
 import com.google.firebase.firestore.DocumentReference;
+import com.softeng_grup6.vainsfitness.utils.Admin;
+import com.softeng_grup6.vainsfitness.utils.Client;
 import com.softeng_grup6.vainsfitness.utils.User;
 
 public class AuthHandler {
@@ -15,15 +17,15 @@ public class AuthHandler {
         this.loginListener = loginListener;
     }
 
-    public void userFound(boolean found, DocumentReference[] id, User user){
+    public void userFound(boolean found, DocumentReference[] id, Admin admin, Client client){
         if(found){
-            listener.onSuccess(id[0], user);
+            listener.onSuccess(id[0], admin, client);
         }else{
             listener.onfailed();
         }
 
     }
-    public void login_user(User user){
-        loginListener.onlogin(user);
+    public void login_user(){
+        loginListener.onlogin();
     }
 }

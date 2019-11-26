@@ -15,8 +15,12 @@ import com.softeng_grup6.vainsfitness.MainActivity;
 import com.softeng_grup6.vainsfitness.R;
 import com.softeng_grup6.vainsfitness.listeners.AuthHandler;
 import com.softeng_grup6.vainsfitness.listeners.AuthListener;
+import com.softeng_grup6.vainsfitness.managers.NetworkManager;
+import com.softeng_grup6.vainsfitness.managers.UserInterfaceManager;
 import com.softeng_grup6.vainsfitness.managers.UserManager;
 import com.softeng_grup6.vainsfitness.systems.ClientSystem;
+import com.softeng_grup6.vainsfitness.utils.Admin;
+import com.softeng_grup6.vainsfitness.utils.Client;
 import com.softeng_grup6.vainsfitness.utils.User;
 
 
@@ -33,8 +37,10 @@ public class Login extends AppCompatActivity {
         uname = (EditText)findViewById(R.id.usrn);
         pswd = (EditText)findViewById(R.id.usrp);
         slogin = (Button)findViewById(R.id.login);
+//        NetworkManager net = new NetworkManager();
+//        net.addAdmin();
         authenticator = new UserManager(getBaseContext());
-        authenticator.authenticate("a@a.com","bbbb");
+        authenticator.authenticate("john","password");
 
         slogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,17 +50,17 @@ public class Login extends AppCompatActivity {
                 authenticator.authenticate(username,password);
             }
         });
+
         UserManager.loginhandler.setLoginListener(new AuthListener() {
             @Override
-            public void onSuccess(DocumentReference id, User user) {}
+            public void onSuccess(DocumentReference id, Admin admin, Client client) { }
             @Override
             public void onfailed() {}
             @Override
-            public void onlogin(User user) { login(user); }
+            public void onlogin() { login(); }
         });
     }
-    public void login(User user){
-        ClientSystem.setUser(user);
+    public void login(){
         Intent go = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(go);
         UserManager.loginhandler.setLoginListener(null);

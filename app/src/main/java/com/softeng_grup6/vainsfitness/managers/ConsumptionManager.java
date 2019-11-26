@@ -7,8 +7,7 @@ import java.util.ArrayList;
 public class ConsumptionManager {
     private ArrayList<Consumption> totalConsumption = new ArrayList<Consumption>();
 
-
-
+    public ConsumptionManager(){}
     public void addConsumption(Consumption consumption){
         this.totalConsumption.add(consumption);
     }

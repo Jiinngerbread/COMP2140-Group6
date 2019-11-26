@@ -180,9 +180,111 @@
                     android:textColorHint="#ccc"
                     android:padding="5dp"
                     android:hint="Enter the user password"
-                    android:id="@+id/pswd"/>
+                    android:id="@+id/pswd"
+                    android:inputType="textPassword"/>
 
             </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fitness Details\n======================="
+                android:padding="5dp"
+                android:textSize="18dp"
+                android:textColor="#ffffff"
+                android:textStyle="italic"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Height"
+                    android:padding="5dp"
+                    android:textSize="18dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="italic"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textColorHint="#ccc"
+                    android:padding="5dp"
+                    android:hint="Enter the user height in meters"
+                    android:id="@+id/height"
+                    android:inputType="numberDecimal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Curent weight"
+                    android:padding="5dp"
+                    android:textSize="18dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="italic"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textColorHint="#ccc"
+                    android:padding="5dp"
+                    android:hint="Enter the current weight in pounds"
+                    android:id="@+id/weight"
+                    android:inputType="numberDecimal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Future Weight"
+                    android:padding="5dp"
+                    android:textSize="18dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="italic"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textColorHint="#ccc"
+                    android:padding="5dp"
+                    android:hint="Enter the weight in pounds"
+                    android:id="@+id/future_weight"
+                    android:inputType="numberDecimal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Time to take"
+                    android:padding="5dp"
+                    android:textSize="18dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="italic"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textColorHint="#ccc"
+                    android:padding="5dp"
+                    android:hint="Enter the time to take in days"
+                    android:id="@+id/worktime"
+                    android:inputType="number"/>
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

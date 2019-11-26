@@ -7,6 +7,8 @@ public class Consumption {
     private Double totalCalorie = null;
     private Date date = null;
 
+    public Consumption(){}
+
     public Consumption(ArrayList<Meal> meal_list, Double totalCalorie, Date date) {
         this.meal_list = meal_list;
         this.totalCalorie = totalCalorie;

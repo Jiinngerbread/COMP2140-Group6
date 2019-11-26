@@ -6,14 +6,29 @@ public class Admin extends User{
     private int numberOfClient = 0;
     private ArrayList<String> clientsUsernames = new ArrayList<String>();
 
-    public Admin(String frstname, String lastname, int age, Date creation_date, String username, String password,String email, int numberOfClient, ArrayList<String> clientsUsernames) {
-        super(frstname, lastname, age, creation_date, username, password,email);
+    public Admin(String frstname, String lastname, int age, Date creation_date, String username, String password, String email, String gender, int numberOfClient, ArrayList<String> clientsUsernames) {
+        super(frstname, lastname, age, creation_date, username, password, email, gender);
         this.numberOfClient = numberOfClient;
         this.clientsUsernames = clientsUsernames;
     }
 
+    public Admin(int numberOfClient, ArrayList<String> clientsUsernames) {
+        this.numberOfClient = numberOfClient;
+        this.clientsUsernames = clientsUsernames;
+    }
+
+    public Admin(){};
+
     public int getNumberOfClient() {
         return numberOfClient;
+    }
+
+    public void setNumberOfClient(int numberOfClient) {
+        this.numberOfClient = numberOfClient;
+    }
+
+    public void setClientsUsernames(ArrayList<String> clientsUsernames) {
+        this.clientsUsernames = clientsUsernames;
     }
 
     public ArrayList<String> getClientsUsernames() {

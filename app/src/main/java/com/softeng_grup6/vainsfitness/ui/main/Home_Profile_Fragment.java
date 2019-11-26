@@ -7,11 +7,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
 import com.softeng_grup6.vainsfitness.MainActivity;
 import com.softeng_grup6.vainsfitness.R;
+import com.softeng_grup6.vainsfitness.managers.UserInterfaceManager;
+import com.softeng_grup6.vainsfitness.systems.AdminSystem;
+import com.softeng_grup6.vainsfitness.systems.ClientSystem;
+import com.softeng_grup6.vainsfitness.utils.Admin;
+import com.softeng_grup6.vainsfitness.utils.Client;
+import com.softeng_grup6.vainsfitness.utils.Profile;
+import com.softeng_grup6.vainsfitness.utils.User;
 
 import at.grabner.circleprogress.CircleProgressView;
 
@@ -19,6 +27,7 @@ public class Home_Profile_Fragment extends Fragment {
     private Button edit_prof =null;
     private  Button add_user = null;
     private Button addMealPlan = null;
+    private TextView disp_name = null;
     private TextView disp_calorie = null;
     private TextView disp_calorie_title= null;
     private TextView disp_num_meal = null;
@@ -28,6 +37,7 @@ public class Home_Profile_Fragment extends Fragment {
     private TextView disp_age = null;
     private TextView disp_gender = null;
     private TextView disp_goal = null;
+    private TextView disp_title = null;
     private CircleProgressView progressView = null;
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
@@ -35,6 +45,7 @@ public class Home_Profile_Fragment extends Fragment {
         edit_prof = view.findViewById(R.id.edit_profile);
         add_user = view.findViewById(R.id.add_user);
         addMealPlan = view.findViewById(R.id.add_meal_plan);
+        disp_name = view.findViewById(R.id.name);
         disp_calorie = view.findViewById(R.id.tot_calorie);
         disp_calorie_title = view.findViewById(R.id.tot_calorie_title);
         disp_num_meal = view.findViewById(R.id.number_meals);
@@ -44,8 +55,40 @@ public class Home_Profile_Fragment extends Fragment {
         disp_age = view.findViewById(R.id.age);
         disp_gender = view.findViewById(R.id.gender);
         disp_goal = view.findViewById(R.id.goal);
+        disp_title = view.findViewById(R.id.title);
         progressView = view.findViewById(R.id.progress_circular);
 
+
+        if(UserInterfaceManager.getLoggedInUserType().equals("admin")){
+            adminConfiguration();
+        }else if(UserInterfaceManager.getLoggedInUserType().equals("client")){
+            clientConfiguration();
+        }
+        return view;
+    }
+
+    private void adminConfiguration(){
+        Admin adminProfileUser = AdminSystem.getAdminProfile().getAdminDetail();
+        Profile adminProfile = AdminSystem.getAdminProfile();
+        disp_title.setText("Admin Details");
+            if(adminProfileUser.getFirstname().equals("Admin")){
+            disp_name.setText(adminProfileUser.getFirstname());
+        }else{
+            disp_name.setText(adminProfileUser.getFullName());
+        }
+        disp_calorie_title.setText("Clients");
+        disp_calorie.setText(""+adminProfileUser.getNumberOfClient());
+
+        disp_num_meal_title.setText("Meal Plans");
+        disp_num_meal.setText(""+adminProfile.getAdminMealPlans().getNumber_of_mealplans());
+
+        disp_age.setText("Age: "+adminProfileUser.getAge());
+        disp_gender.setText("Gender: "+adminProfileUser.getGender());
+        disp_goal.setText("Email: "+adminProfileUser.getEmail());
+        progressView.setVisibility(View.GONE);
+        disp_num_day_title.setVisibility(View.GONE);
+        disp_num_days.setVisibility(View.GONE);
+        edit_prof.setVisibility(View.GONE);
 
         edit_prof.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,10 +107,28 @@ public class Home_Profile_Fragment extends Fragment {
         addMealPlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent go = new Intent(getContext(), AddMealPlan.class);
+                Intent go = new Intent(getContext(), AddMeal.class);
                 startActivity(go);
             }
         });
-        return view;
+
+    }
+
+    private void clientConfiguration(){
+        Client clientProfile = ClientSystem.getClientProfile().getClientDetail();
+        edit_prof.setVisibility(View.VISIBLE);
+        add_user.setVisibility(View.GONE);
+        addMealPlan.setVisibility(View.GONE);
+        disp_name.setText(clientProfile.getFullName());
+        disp_calorie.setText("0");
+        disp_num_meal.setText("0");
+        disp_num_days.setText("0");
+        disp_age.setText("Age: "+clientProfile.getAge());
+        disp_gender.setText("Gender: "+clientProfile.getGender());
+        disp_goal.setText("Goal: 250"+" lb");
+        float progress = (float)150/(float)250 * (float)100;
+        progressView.setValue( progress);
+
+
     }
 }

@@ -14,10 +14,11 @@
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="160dp"
                 android:orientation="vertical"
-                android:background="@color/colorAccent"
-                android:padding="10dp">
+                android:background="@drawable/workout"
+                android:padding="10dp"
+                android:gravity="center">
                 <!--            <com.androdocs.circleimagelibrary.CircleImageView-->
                 <!--                android:layout_width="wrap_content"-->
                 <!--                android:layout_height="200dp"-->
@@ -29,7 +30,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="100sp"
-                    android:src="@drawable/user_img"
+                    android:src="@drawable/icon"
                     android:padding="10dp"
                     />
                 <TextView
@@ -39,7 +40,8 @@
                     android:textColor="#ffffff"
                     android:layout_gravity="center"
                     android:textSize="24sp"
-                    android:id="@+id/names"/>
+                    android:id="@+id/name"
+                    android:backgroundTint="#888888"/>
 
             </LinearLayout>
 
@@ -50,10 +52,11 @@
                 android:layout_gravity="center"
                 android:textColor="#ffffff"
                 android:textStyle="bold|italic"
-                android:text="Dailly Analysis"
+                android:text="Daily Analysis"
                 android:textSize="20dp"
                 android:layout_marginTop="10dp"
-                android:padding="2dp"/>
+                android:padding="2dp"
+                android:id="@+id/title"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
