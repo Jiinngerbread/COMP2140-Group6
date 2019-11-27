@@ -2,4 +2,8 @@
     <string name="app_name">Vains Fitness</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="Weight">TextView</string>
+    <string name="save">SAVE</string>
+    <string name="update_weight">Please input your current weight:</string>
+    <string name="updated_weight">Updated Weight</string>
 </resources>
