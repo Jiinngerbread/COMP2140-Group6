@@ -15,10 +15,17 @@ import com.softeng_grup6.vainsfitness.R;
 import com.softeng_grup6.vainsfitness.listeners.NetSessionListener;
 import com.softeng_grup6.vainsfitness.listeners.UserAcntCheckListener;
 import com.softeng_grup6.vainsfitness.listeners.UserAcntHandler;
+import com.softeng_grup6.vainsfitness.managers.ConsumptionManager;
 import com.softeng_grup6.vainsfitness.managers.NetworkManager;
 import com.softeng_grup6.vainsfitness.utils.Client;
+import com.softeng_grup6.vainsfitness.utils.Consumption;
 import com.softeng_grup6.vainsfitness.utils.Date;
+import com.softeng_grup6.vainsfitness.utils.Meal;
+import com.softeng_grup6.vainsfitness.utils.MealPlan;
+import com.softeng_grup6.vainsfitness.utils.Report;
+import com.softeng_grup6.vainsfitness.utils.WorkOutPlan;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class AddUser extends AppCompatActivity {
@@ -59,6 +66,7 @@ public class AddUser extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final NetworkManager session = new NetworkManager();
+                session.setNetContext(getApplicationContext());
                 final String firstname = firstnameField.getText().toString();
                 final String lastname = lastnameField.getText().toString();
                 final int age = Integer.parseInt(ageField.getText().toString());
@@ -68,8 +76,8 @@ public class AddUser extends AppCompatActivity {
                 final String password = passwordField.getText().toString();
                 final Double height = Double.valueOf(heightField.getText().toString());
                 final Double current_weight = Double.valueOf(curweightField.getText().toString());
-                Double future_weight = Double.valueOf(furWeightField.getText().toString());
-                int workout_time = Integer.parseInt(timeField.getText().toString());
+                final Double future_weight = Double.valueOf(furWeightField.getText().toString());
+                final int workout_time = Integer.parseInt(timeField.getText().toString());
 
                 if(firstname.length() > 2 && lastname.length() > 2){
                     if(age > 0 && gender.length() >= 4 && email.length() >3){
@@ -81,7 +89,10 @@ public class AddUser extends AppCompatActivity {
                                     public void userAvailable() {
                                         Calendar c = Calendar.getInstance();
                                         Client client = new Client(firstname,lastname,age,new Date(c.get(Calendar.DAY_OF_MONTH),c.get(Calendar.MONTH),c.get(Calendar.YEAR)),username,password,email,gender,current_weight,height);
-                                        session.addNewClient(client);
+                                        ArrayList<String> dummy_items = new ArrayList<>();
+                                        Report report = new Report(future_weight/current_weight*100.0);
+                                        WorkOutPlan workOutPlan = new WorkOutPlan(future_weight,workout_time);
+                                        session.addNewClient(client,report,workOutPlan);
                                         userAcntHandler.setUserAccountAddListener(new NetSessionListener() {
                                             @Override
                                             public void succees() {

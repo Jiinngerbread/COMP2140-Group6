@@ -13,13 +13,18 @@ import androidx.fragment.app.Fragment;
 
 import com.softeng_grup6.vainsfitness.MainActivity;
 import com.softeng_grup6.vainsfitness.R;
+import com.softeng_grup6.vainsfitness.managers.ConsumptionManager;
 import com.softeng_grup6.vainsfitness.managers.UserInterfaceManager;
 import com.softeng_grup6.vainsfitness.systems.AdminSystem;
 import com.softeng_grup6.vainsfitness.systems.ClientSystem;
 import com.softeng_grup6.vainsfitness.utils.Admin;
 import com.softeng_grup6.vainsfitness.utils.Client;
+import com.softeng_grup6.vainsfitness.utils.Consumption;
+import com.softeng_grup6.vainsfitness.utils.Date;
 import com.softeng_grup6.vainsfitness.utils.Profile;
 import com.softeng_grup6.vainsfitness.utils.User;
+
+import java.util.Calendar;
 
 import at.grabner.circleprogress.CircleProgressView;
 
@@ -115,18 +120,26 @@ public class Home_Profile_Fragment extends Fragment {
     }
 
     private void clientConfiguration(){
+        Calendar c = Calendar.getInstance();
         Client clientProfile = ClientSystem.getClientProfile().getClientDetail();
+        Date today = new Date(c.get(Calendar.DAY_OF_MONTH),c.get(Calendar.MONTH), c.get(Calendar.YEAR));
         edit_prof.setVisibility(View.VISIBLE);
         add_user.setVisibility(View.GONE);
         addMealPlan.setVisibility(View.GONE);
         disp_name.setText(clientProfile.getFullName());
-        disp_calorie.setText("0");
-        disp_num_meal.setText("0");
-        disp_num_days.setText("0");
+        Consumption todayConsumption = ClientSystem.getClientProfile().getUserConsumption().getTodaysConsumption(today);
+        if(todayConsumption != null){
+            disp_calorie.setText(""+todayConsumption.getTotalCalorie());
+            disp_num_meal.setText(""+todayConsumption.getMeal_list().size());
+        }else{
+            disp_calorie.setText("0");
+            disp_num_meal.setText("0");
+        }
+        disp_num_days.setText(""+ (c.get(Calendar.DAY_OF_MONTH) - clientProfile.getCreation_date().getDay()));
         disp_age.setText("Age: "+clientProfile.getAge());
         disp_gender.setText("Gender: "+clientProfile.getGender());
-        disp_goal.setText("Goal: 250"+" lb");
-        float progress = (float)150/(float)250 * (float)100;
+        disp_goal.setText("Goal: "+ClientSystem.getClientProfile().getWorkOutPlan().getExpected_weight()+" lb");
+        float progress = Float.parseFloat(""+ClientSystem.getClientProfile().getProgressReport().getProgrssPercentage());
         progressView.setValue( progress);
 
 

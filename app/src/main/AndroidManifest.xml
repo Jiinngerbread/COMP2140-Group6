@@ -3,7 +3,7 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.softeng_grup6.vainsfitness">
     <uses-permission android:name="android.permission.INTERNET"/>
-<!--    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <!--<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>-->
 
     <dist:module dist:instant="true" />

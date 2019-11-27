@@ -17,14 +17,21 @@ import com.softeng_grup6.vainsfitness.listeners.CalorieHandler;
 import com.softeng_grup6.vainsfitness.listeners.CalorieListener;
 import com.softeng_grup6.vainsfitness.listeners.MealPlanHandler;
 import com.softeng_grup6.vainsfitness.listeners.NetSessionListener;
+import com.softeng_grup6.vainsfitness.listeners.UserAcntHandler;
+import com.softeng_grup6.vainsfitness.managers.ConsumptionManager;
 import com.softeng_grup6.vainsfitness.managers.NetworkManager;
 import com.softeng_grup6.vainsfitness.managers.UserInterfaceManager;
 import com.softeng_grup6.vainsfitness.systems.AdminSystem;
+import com.softeng_grup6.vainsfitness.systems.ClientSystem;
 import com.softeng_grup6.vainsfitness.utils.Admin;
 import com.softeng_grup6.vainsfitness.utils.CalorieAPI;
+import com.softeng_grup6.vainsfitness.utils.Consumption;
+import com.softeng_grup6.vainsfitness.utils.Date;
+import com.softeng_grup6.vainsfitness.utils.Meal;
 import com.softeng_grup6.vainsfitness.utils.MealPlan;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class AddMeal extends AppCompatActivity {
     private Button addFromMealPlan = null;
@@ -39,6 +46,7 @@ public class AddMeal extends AppCompatActivity {
     private LinearLayout meal_description_layout = null;
     public static CalorieHandler calorieHandler = new CalorieHandler();
     public static MealPlanHandler mealPlanHandler = new MealPlanHandler();
+    public static UserAcntHandler userAcntHandler = new UserAcntHandler();
     String meal_name = "";
     ArrayList<String> meal_items = new ArrayList<>();
     String display_text = "Meal name - ";
@@ -146,31 +154,102 @@ public class AddMeal extends AppCompatActivity {
         });
 
     }
+
     private  void clientConfiguration(){
+        meal_description_layout.setVisibility(View.GONE);
+        title.setText("Add Meal For Today");
+        mealDisplay.setText(display_text);
+        mealDetails.setHint("Enter Meal name/item name then press add");
+
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String add_text = mealDetails.getText().toString();
+                if(add_text.length() > 1){
+                    if(count > 0){
+                        meal_items.add(add_text);
+                        display_text = display_text+"\t\t"+add_text+"\n";
 
+                    }else{
+                        meal_name = add_text;
+                        display_text = display_text+add_text+"\nItems -\n";
+                        count++;
+                        mealDetails.setHint("Enter the Items that make up meal with quantity eg.(2 egg)");
+                    }
+                }else{
+                    Toast.makeText(AddMeal.this, "Please enter some text before you add", Toast.LENGTH_SHORT).show();
+                }
+                mealDetails.setText("");
+                mealDisplay.setText(display_text);
             }
         });
         doneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                returnHome();
+                if(meal_items.size() > 0){
+                    CalorieAPI calorieAPI = new CalorieAPI(getApplicationContext());
+                    //Toast.makeText(AddMeal.this, "meal 1: "+meal_items.get(0), Toast.LENGTH_SHORT).show();
+                    calorieAPI.getCalorie("addmealplan",meal_items);
+                    calorieHandler.setOnCalorieFetchListener(new CalorieListener() {
+                        @Override
+                        public void success(int calorie_value) {
+                            Calendar calendar = Calendar.getInstance();
+                            Date todayDate = new Date(calendar.get(Calendar.DAY_OF_MONTH), calendar.get(Calendar.MONTH), calendar.get(Calendar.YEAR));
+                            Meal meal = new Meal(meal_name,meal_items,calorie_value);
+                            Toast.makeText(AddMeal.this, ""+meal.getName(), Toast.LENGTH_SHORT).show();
+                            ClientSystem.getClientProfile().getUserConsumption().addTodaysMeal(todayDate,meal);
+                            Toast.makeText(AddMeal.this, "Total Calorie: "+ClientSystem.getClientProfile().getUserConsumption().getTodaysConsumption(todayDate).getTotalCalorie(), Toast.LENGTH_SHORT).show();
+                            ConsumptionManager consumptionManager = ClientSystem.getClientProfile().getUserConsumption();
+                            NetworkManager session  = new NetworkManager();
+                            session.setNetContext(getApplicationContext());
+                            session.clientConsumptionUpdate("am",consumptionManager);
+                            userAcntHandler.setConsumptionUpdateListener(new NetSessionListener() {
+                                @Override
+                                public void succees() {
+                                    Toast.makeText(AddMeal.this, "Successfully Added", Toast.LENGTH_SHORT).show();
+                                    returnHome();
+                                }
+
+                                @Override
+                                public void unsuccessful() {
+                                    Toast.makeText(AddMeal.this, "Network Problem", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }
+                        @Override
+                        public void unsuccessFul() {
+                            count = 0;
+                            meal_name = "";
+                            mealDetails.setText("");
+                            display_text = "Meal name - ";
+                            meal_items.clear();
+                            mealDescription.setText("");
+                            mealDisplay.setText(display_text);
+                            // Toast.makeText(AddMeal.this, "Network Issue", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                }else{
+                    Toast.makeText(AddMeal.this, "Enter the meal detail before saving", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
         addFromMealPlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                userAcntHandler.setConsumptionUpdateListener(null);
                 Intent go = new Intent(getApplicationContext(), AddMealPlan.class);
                 startActivity(go);
                 finish();
             }
         });
 
+
     }
 
     private void returnHome(){
+        userAcntHandler.setConsumptionUpdateListener(null);
         Intent go = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(go);
         finish();

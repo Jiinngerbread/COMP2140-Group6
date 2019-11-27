@@ -2,11 +2,13 @@ package com.softeng_grup6.vainsfitness.managers;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.DialogCompat;
 
+import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -18,8 +20,11 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.softeng_grup6.vainsfitness.systems.AdminSystem;
+import com.softeng_grup6.vainsfitness.systems.ClientSystem;
 import com.softeng_grup6.vainsfitness.ui.main.AddMeal;
+import com.softeng_grup6.vainsfitness.ui.main.AddMealPlan;
 import com.softeng_grup6.vainsfitness.ui.main.AddUser;
+import com.softeng_grup6.vainsfitness.ui.main.RemoveMeal;
 import com.softeng_grup6.vainsfitness.utils.Admin;
 import com.softeng_grup6.vainsfitness.utils.Client;
 import com.softeng_grup6.vainsfitness.utils.Date;
@@ -110,11 +115,19 @@ public class NetworkManager {
         });
     }
 
-    public void addNewClient(final Client client){
+    public void addNewClient(final Client client, final Report report, final WorkOutPlan workOutPlan){
         clientUsers.add(client)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
+                        DocumentReference id = clientUsers.document(documentReference.getId());
+                        CollectionReference lClientDetail = id.collection("Details");
+                        DocumentReference report_ref = lClientDetail.document("report");
+                        DocumentReference workout_ref = lClientDetail.document("workoutplan");
+
+                        report_ref.set(report);
+                        workout_ref.set(workOutPlan);
+
                         AdminSystem.getAdminProfile().getAdminDetail().addClient(client.getUsername());
                         clientdoc.update("count",  AdminSystem.getAdminProfile().getAdminDetail().getNumberOfClient())
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -225,9 +238,46 @@ public class NetworkManager {
             @Override
             public void onFailure(@NonNull Exception e) { UserManager.userAcntHandler.clientLoadFail(); }
         });
+    }
 
-
-
-
+    public void clientConsumptionUpdate(String  from, ConsumptionManager consumptionManager){
+        DocumentReference consum_ref = ClientSystem.getClientProfile().getClientDetail().getId().collection("Details").document("consumption");
+        if(from.equals("am")){
+            consum_ref.set(consumptionManager).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    AddMeal.userAcntHandler.consumptionUpdateSuccess();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    AddMeal.userAcntHandler.consumptionUpdateFail();
+                }
+            });
+        }else if (from.equals("rm")){
+            consum_ref.set(consumptionManager).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    RemoveMeal.userAcntHandler.consumptionUpdateSuccess();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    RemoveMeal.userAcntHandler.consumptionUpdateFail();
+                }
+            });
+        }else if (from.equals("amp")){
+            consum_ref.set(consumptionManager).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    AddMealPlan.userAcntHandler.consumptionUpdateSuccess();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    AddMealPlan.userAcntHandler.consumptionUpdateFail();
+                }
+            });
+        }
     }
 }

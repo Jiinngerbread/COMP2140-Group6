@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"  android:background="@color/cardview_dark_background"
+    android:layout_margin="10dp"
+    android:padding="5dp"
+    android:descendantFocusability="blocksDescendants"
+    >
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/select"
+        android:clickable="false"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add User"
+        android:layout_margin = "10dp"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:id="@+id/name"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Meal Items"
+        android:layout_margin = "5dp"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:textStyle="normal"
+        android:id="@+id/items" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calories"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:textStyle="normal"
+        android:id="@+id/calorie"
+        android:textAlignment="textEnd"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Method"
+        android:layout_margin = "5dp"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:textStyle="italic"
+        android:id="@+id/method"
+        />
+
+</LinearLayout>

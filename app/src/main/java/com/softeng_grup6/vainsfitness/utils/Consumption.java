@@ -15,6 +15,11 @@ public class Consumption {
         this.date = date;
     }
 
+    public Consumption(Double totalCalorie, Date date) {
+        this.totalCalorie = totalCalorie;
+        this.date = date;
+    }
+
     public ArrayList<Meal> getMeal_list() {
         return meal_list;
     }
@@ -49,6 +54,12 @@ public class Consumption {
             int indx = this.meal_list.indexOf(meal);
             this.totalCalorie -= this.meal_list.get(indx).getCalorie();
             this.meal_list.remove(indx);
+        }
+    }
+    public void removeMeal(int position){
+        if(this.meal_list.size() >= position){
+            this.totalCalorie -= this.meal_list.get(position).getCalorie();
+            this.meal_list.remove(position);
         }
     }
 }

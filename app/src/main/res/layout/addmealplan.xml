@@ -13,8 +13,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Add Meal plan"
-                android:layout_margin = "10dp"
-                android:padding="5dp"
+                android:layout_margin = "5dp"
                 android:textAlignment="center"
                 android:textSize="20dp"
                 android:textColor="#ffffff"
@@ -23,23 +22,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Select Meal plan to add"
-                android:layout_margin = "10dp"
-                android:padding="5dp"
+                android:layout_margin = "5dp"
                 android:textSize="20dp"
                 android:textColor="#ffffff"
                 android:textStyle="italic"/>
-            <LinearLayout
+            <ListView
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:orientation="vertical">
-                <ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/mealList">
+                android:layout_height="340dp"
+                android:id="@+id/mealList"/>
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="340dp"-->
+<!--                android:orientation="vertical">-->
 
-                </ListView>
-
-            </LinearLayout>
+<!--            </LinearLayout>-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
