@@ -9,6 +9,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <list default="true" id="13de53e7-ba8c-4707-a5eb-2c2ba35a4413" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_1_0_aar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/render.experimental.xml" afterDir="false" />
@@ -119,6 +120,9 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+    <list default="true" id="09586491-c90f-44ff-a08f-90d45bce8f65" name="Default Changelist" comment="" />
+>>>>>>> Stashed changes
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +132,12 @@
   <component name="DefaultGradleProjectSettings">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <option name="isMigrated" value="true" />
+=======
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+>>>>>>> Stashed changes
 =======
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
@@ -151,6 +160,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/change_weight.xml">
           <provider editor-type-id="text-editor">
@@ -165,29 +175,50 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
               <caret line="87" column="10" selection-start-line="87" selection-start-column="10" selection-end-line="87" selection-end-column="10" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/ui/main/ChangeWeight.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Meal.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-233">
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+>>>>>>> Stashed changes
               <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Admin.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/WorkOutPlan.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+>>>>>>> Stashed changes
               <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="226">
@@ -195,20 +226,34 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Report.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/src/androidTest/java/com/softeng_grup6/vainsfitness/ExampleInstrumentedTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Profile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/systems/ClientSystem.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
@@ -217,37 +262,63 @@
                 <element signature="e#340#341#0" expanded="true" />
                 <element signature="e#376#377#0" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/MealPlan.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/User.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-675">
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Meal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+>>>>>>> Stashed changes
               <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Report.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Date.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+>>>>>>> Stashed changes
               <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Profile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Client.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/MealPlan.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -297,6 +368,15 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Consumption.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
+>>>>>>> Stashed changes
         </entry>
       </file>
     </leaf>
@@ -304,6 +384,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
   <component name="IdeDocumentHistory">
@@ -320,6 +401,9 @@
 =======
   <component name="ProjectFrameBounds" extendedState="7">
 >>>>>>> Stashed changes
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+>>>>>>> Stashed changes
     <option name="x" value="794" />
     <option name="width" value="814" />
     <option name="height" value="867" />
@@ -332,6 +416,12 @@
     <panes>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+>>>>>>> Stashed changes
 =======
       <pane id="PackagesPane" />
       <pane id="Scope" />
@@ -355,17 +445,26 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
 =======
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
 =======
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
 >>>>>>> Stashed changes
+=======
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+>>>>>>> Stashed changes
             </path>
             <path>
               <item name="COMP2140-Group6" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="vainsfitness" type="cbb59c9e:AndroidPsiDirectoryNode" />
+>>>>>>> Stashed changes
+=======
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="vainsfitness" type="cbb59c9e:AndroidPsiDirectoryNode" />
 >>>>>>> Stashed changes
@@ -373,6 +472,7 @@
             <path>
               <item name="COMP2140-Group6" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
@@ -380,12 +480,17 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="vainsfitness" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="managers" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="vainsfitness" type="cbb59c9e:AndroidPsiDirectoryNode" />
+>>>>>>> Stashed changes
             </path>
             <path>
               <item name="COMP2140-Group6" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="vainsfitness" type="cbb59c9e:AndroidPsiDirectoryNode" />
+<<<<<<< Updated upstream
               <item name="systems" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -414,11 +519,14 @@
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       <pane id="Scope" />
@@ -428,10 +536,13 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="emulator-5554" />
@@ -450,6 +561,12 @@
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
 >>>>>>> Stashed changes
   </component>
   <component name="RunDashboard">
@@ -474,12 +591,16 @@
     </configuration>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
 =======
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
 >>>>>>> Stashed changes
 =======
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+>>>>>>> Stashed changes
+=======
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
 >>>>>>> Stashed changes
       <module name="app" />
       <option name="DEPLOY" value="true" />
@@ -541,6 +662,7 @@
     <task active="true" id="Default" summary="Default task">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <changelist id="13de53e7-ba8c-4707-a5eb-2c2ba35a4413" name="Default Changelist" comment="" />
       <created>1574803601035</created>
       <option name="number" value="Default" />
@@ -549,12 +671,17 @@
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
       <changelist id="09586491-c90f-44ff-a08f-90d45bce8f65" name="Default Changelist" comment="" />
       <created>1574872401448</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574872401448</updated>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -563,6 +690,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="916" extended-state="6" />
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -676,38 +804,137 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-675">
+=======
+    <layout>
+      <window_info id="Capture Tool" />
+      <window_info active="true" content_ui="combo" id="Project" sideWeight="0.4993395" visible="true" weight="0.32969153" />
+      <window_info id="Structure" side_tool="true" />
+      <window_info id="Build Variants" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="Resources Explorer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Captures" order="0" sideWeight="0.5006605" side_tool="true" visible="true" weight="0.32969153" />
+      <window_info anchor="bottom" id="Run" />
+      <window_info anchor="bottom" id="Logcat" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="Debug" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Build" weight="0.32893" />
+      <window_info anchor="bottom" id="Android Profiler" />
+      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Gradle" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Flutter Inspector" />
+      <window_info anchor="right" id="Flutter Outline" />
+      <window_info anchor="right" id="Palette&#9;" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/addmealplan.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/change_weight.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/addmeal.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/progressreport.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/login.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/add_from_plan_items.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/ui/main/ChangeWeight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/ui/main/ConsumptionList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/WorkOutPlan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+>>>>>>> Stashed changes
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Report.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+=======
+        <state relative-caret-position="-7">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Profile.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="68">
+=======
+        <state relative-caret-position="-7">
+>>>>>>> Stashed changes
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/MealPlan.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="68">
+=======
+        <state relative-caret-position="-7">
+>>>>>>> Stashed changes
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Meal.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="-233">
+=======
+        <state relative-caret-position="-7">
+>>>>>>> Stashed changes
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Admin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -778,6 +1005,29 @@
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng_grup6/vainsfitness/utils/Consumption.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
 >>>>>>> Stashed changes
   </component>
   <component name="masterDetails">
