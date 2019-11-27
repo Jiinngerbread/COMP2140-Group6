@@ -43,5 +43,10 @@ public class WorkOutPlan {
         double calorieloss = weight_loss * 3500;
         this.estimatedDailyCalorieConsumption = (calorieloss/(weight_loss+timeToTake))*1.5;
     }
+    public void generateEstDailyCalorConsumption(double currentWeight){
+        double weight_loss =  currentWeight - expected_weight;
+        double calorieloss = weight_loss * 3500;
+        this.estimatedDailyCalorieConsumption = (calorieloss/(weight_loss+timeToTake))*1.5;
+    }
 
 }

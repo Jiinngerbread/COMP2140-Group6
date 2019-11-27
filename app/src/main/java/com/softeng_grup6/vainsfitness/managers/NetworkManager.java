@@ -206,6 +206,7 @@ public class NetworkManager {
         });
 
     }
+
     public void loadClientDetails(DocumentReference id){
         final CollectionReference lClientDetail = id.collection("Details");
         final DocumentReference consumption_ref = lClientDetail.document("consumption");

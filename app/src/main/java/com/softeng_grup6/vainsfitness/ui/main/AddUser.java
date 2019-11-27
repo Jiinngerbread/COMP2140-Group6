@@ -91,7 +91,7 @@ public class AddUser extends AppCompatActivity {
                                         Client client = new Client(firstname,lastname,age,new Date(c.get(Calendar.DAY_OF_MONTH),c.get(Calendar.MONTH),c.get(Calendar.YEAR)),username,password,email,gender,current_weight,height);
                                         Report report = new Report(current_weight);
                                         WorkOutPlan workOutPlan = new WorkOutPlan(future_weight,workout_time);
-                                        workOutPlan.generateEstDailyCalorConsumption();
+                                        workOutPlan.generateEstDailyCalorConsumption(current_weight);
                                         session.addNewClient(client,report,workOutPlan);
                                         userAcntHandler.setUserAccountAddListener(new NetSessionListener() {
                                             @Override
