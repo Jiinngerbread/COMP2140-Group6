@@ -31,7 +31,7 @@ import at.grabner.circleprogress.CircleProgressView;
 public class Home_Profile_Fragment extends Fragment {
     private Button edit_prof =null;
     private  Button add_user = null;
-    private Button addMealPlan = null;
+//    private Button addMealPlan = null;
     private TextView disp_name = null;
     private TextView disp_calorie = null;
     private TextView disp_calorie_title= null;
@@ -49,7 +49,7 @@ public class Home_Profile_Fragment extends Fragment {
         View view = inflater.inflate(R.layout.home_profile_fragment, container, false);
         edit_prof = view.findViewById(R.id.edit_profile);
         add_user = view.findViewById(R.id.add_user);
-        addMealPlan = view.findViewById(R.id.add_meal_plan);
+//        addMealPlan = view.findViewById(R.id.add_meal_plan);
         disp_name = view.findViewById(R.id.name);
         disp_calorie = view.findViewById(R.id.tot_calorie);
         disp_calorie_title = view.findViewById(R.id.tot_calorie_title);
@@ -73,6 +73,11 @@ public class Home_Profile_Fragment extends Fragment {
     }
 
     private void adminConfiguration(){
+        progressView.setVisibility(View.GONE);
+        disp_num_day_title.setVisibility(View.GONE);
+        disp_num_days.setVisibility(View.GONE);
+        edit_prof.setVisibility(View.GONE);
+//        addMealPlan.setVisibility(View.GONE);
         Admin adminProfileUser = AdminSystem.getAdminProfile().getAdminDetail();
         Profile adminProfile = AdminSystem.getAdminProfile();
         disp_title.setText("Admin Details");
@@ -90,10 +95,6 @@ public class Home_Profile_Fragment extends Fragment {
         disp_age.setText("Age: "+adminProfileUser.getAge());
         disp_gender.setText("Gender: "+adminProfileUser.getGender());
         disp_goal.setText("Email: "+adminProfileUser.getEmail());
-        progressView.setVisibility(View.GONE);
-        disp_num_day_title.setVisibility(View.GONE);
-        disp_num_days.setVisibility(View.GONE);
-        edit_prof.setVisibility(View.GONE);
 
         edit_prof.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,23 +110,24 @@ public class Home_Profile_Fragment extends Fragment {
                 startActivity(go);
             }
         });
-        addMealPlan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent go = new Intent(getContext(), AddMeal.class);
-                startActivity(go);
-            }
-        });
+//        addMealPlan.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
 
     }
 
     private void clientConfiguration(){
+        ClientSystem.getClientProfile().getProgressReport().generateReport();
+        //Toast.makeText(getContext(), "Reportdata: "+ ClientSystem.getClientProfile().getWorkOutPlan().getEstimatedDailyCalorieConsumption(), Toast.LENGTH_SHORT).show();
         Calendar c = Calendar.getInstance();
         Client clientProfile = ClientSystem.getClientProfile().getClientDetail();
         Date today = new Date(c.get(Calendar.DAY_OF_MONTH),c.get(Calendar.MONTH), c.get(Calendar.YEAR));
         edit_prof.setVisibility(View.VISIBLE);
         add_user.setVisibility(View.GONE);
-        addMealPlan.setVisibility(View.GONE);
+//        addMealPlan.setVisibility(View.GONE);
         disp_name.setText(clientProfile.getFullName());
         Consumption todayConsumption = ClientSystem.getClientProfile().getUserConsumption().getTodaysConsumption(today);
         if(todayConsumption != null){
@@ -139,8 +141,17 @@ public class Home_Profile_Fragment extends Fragment {
         disp_age.setText("Age: "+clientProfile.getAge());
         disp_gender.setText("Gender: "+clientProfile.getGender());
         disp_goal.setText("Goal: "+ClientSystem.getClientProfile().getWorkOutPlan().getExpected_weight()+" lb");
-        float progress = Float.parseFloat(""+ClientSystem.getClientProfile().getProgressReport().getProgrssPercentage());
-        progressView.setValue( progress);
+        float progress = Float.parseFloat(""+((todayConsumption.getTotalCalorie()/ClientSystem.getClientProfile().getWorkOutPlan().getEstimatedDailyCalorieConsumption())*100));
+
+        progressView.setValue(progress);
+
+        edit_prof.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent go = new Intent(getContext(), ChangeWeight.class);
+                startActivity(go);
+            }
+        });
 
 
     }

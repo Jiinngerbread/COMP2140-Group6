@@ -1,34 +1,27 @@
 package com.softeng_grup6.vainsfitness.ui.main;
 
 import android.content.Context;
-import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import com.softeng_grup6.vainsfitness.R;
-import com.softeng_grup6.vainsfitness.systems.ClientSystem;
-import com.softeng_grup6.vainsfitness.utils.Client;
 import com.softeng_grup6.vainsfitness.utils.Meal;
 import com.softeng_grup6.vainsfitness.utils.MealPlan;
 
 import java.util.ArrayList;
 
-public class MealListAdapter extends ArrayAdapter<Meal> {
+public class MealPlansAdapter extends ArrayAdapter<MealPlan>{
 
-    public MealListAdapter(Context context, ArrayList<Meal> meals) {
+    public MealPlansAdapter(Context context, ArrayList<MealPlan> meals) {
         super(context, 0,meals);
     }
 
-
     @Override
-    public View getView(int position,  View convertView,  ViewGroup parent) {
-        Meal meal = getItem(position);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        MealPlan meal = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.meal_item, parent, false);
@@ -44,12 +37,7 @@ public class MealListAdapter extends ArrayAdapter<Meal> {
             meal_items = meal_items+meal.getFood_items().get(a)+"\n";
         }
         items.setText("Ingredients:\n"+meal_items);
-        if(meal instanceof MealPlan){
-            method.setVisibility(View.VISIBLE);
-            method.setText("Method:\n"+((MealPlan) meal).getMethod());
-        }else{
-            method.setVisibility(View.GONE);
-        }
+        method.setText("Method:\n"+meal.getMethod());
         return convertView;
     }
 }

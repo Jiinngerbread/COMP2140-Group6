@@ -118,7 +118,7 @@ public class AddMeal extends AppCompatActivity {
 //                            Toast.makeText(AddMeal.this, "Meal Plan Name "+mealPlan.getName(), Toast.LENGTH_SHORT).show();
                             AdminSystem.getAdminProfile().getAdminMealPlans().addMealPlanToList(mealPlan);
                             NetworkManager session  = new NetworkManager();
-                            session.updateMealPlans(AdminSystem.getAdminProfile().getAdminMealPlans());
+                            session.updateMealPlans("amp",AdminSystem.getAdminProfile().getAdminMealPlans());
                             mealPlanHandler.setOnUpdateMealPlanListener(new NetSessionListener() {
                                 @Override
                                 public void succees() {

@@ -34,4 +34,11 @@ public class MealPlanManager {
         mealPlans.add(mealPlan);
         number_of_mealplans++;
     }
+    public  void removeMealPlanFromList(MealPlan mealPlan){
+        if(mealPlans.contains(mealPlan)){
+            int indx = mealPlans.indexOf(mealPlan);
+            mealPlans.remove(indx);
+            number_of_mealplans--;
+        }
+    }
 }

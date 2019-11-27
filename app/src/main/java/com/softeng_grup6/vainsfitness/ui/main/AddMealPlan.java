@@ -69,7 +69,7 @@ public class AddMealPlan extends AppCompatActivity {
                 if(mealPlansPositions.size() > 0){
                     for(int a = 0; a < mealPlansPositions.size(); a++){
                         ClientSystem.getClientProfile().getUserConsumption()
-                                .getTodaysConsumption(today).addMeal(mealPlans.get(Integer.parseInt(mealPlansPositions.get(a))));
+                                .addTodaysMeal(today,mealPlans.get(Integer.parseInt(mealPlansPositions.get(a))));
                     }
                 }
                 NetworkManager session = new NetworkManager();

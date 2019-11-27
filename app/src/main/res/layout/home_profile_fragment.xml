@@ -219,7 +219,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_margin="10dp"
-                android:weightSum="3">
+                android:weightSum="2">
                 <Button style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -240,15 +240,15 @@
                     android:layout_weight="1"
                     android:textSize="13dp"/>
 
-                <Button style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Add Meal Plan"
-                    android:layout_margin="5dp"
-                    android:id="@+id/add_meal_plan"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:textSize="13dp"/>
+<!--                <Button style="@style/Widget.AppCompat.Button.Colored"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Add Meal Plan"-->
+<!--                    android:layout_margin="5dp"-->
+<!--                    android:id="@+id/add_meal_plan"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:textSize="13dp"/>-->
 
             </LinearLayout>
 

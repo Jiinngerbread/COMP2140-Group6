@@ -36,6 +36,7 @@ public class ConsumptionManager {
     public int getRecordedConsumptions() {
         return recordedConsumptions;
     }
+
     public void addTodaysMeal(Date date, Meal meal){
         boolean consumption_exist = false;
         int indx = 0;
@@ -43,11 +44,11 @@ public class ConsumptionManager {
             if(totalConsumption.get(a).getDate().getDate().equals(date.getDate())){
                 consumption_exist = true;
                 indx = a;
+                break;
             }
         }
         if(consumption_exist){
             totalConsumption.get(indx).addMeal(meal);
-            recordedConsumptions++;
         }else{
             Consumption consumption = new Consumption(0.0,date);
             consumption.addMeal(meal);

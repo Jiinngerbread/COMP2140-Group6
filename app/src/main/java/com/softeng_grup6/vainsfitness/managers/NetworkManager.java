@@ -157,18 +157,32 @@ public class NetworkManager {
         });
     }
 
-    public void updateMealPlans(MealPlanManager mealPlanManager){
-        mealPlanlist.set(mealPlanManager).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                AddMeal.mealPlanHandler.mealPlanUpdateSuccessfull();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                AddMeal.mealPlanHandler.mealPlanUpdateUnsuccessful();
-            }
-        });
+    public void updateMealPlans(String from, MealPlanManager mealPlanManager){
+        if(from.equals("amp")){
+            mealPlanlist.set(mealPlanManager).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    AddMeal.mealPlanHandler.mealPlanUpdateSuccessfull();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    AddMeal.mealPlanHandler.mealPlanUpdateUnsuccessful();
+                }
+            });
+        }else if(from.equals("rmp")){
+            mealPlanlist.set(mealPlanManager).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    RemoveMeal.mealPlanHandler.mealPlanUpdateSuccessfull();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    RemoveMeal.mealPlanHandler.mealPlanUpdateUnsuccessful();
+                }
+            });
+        }
     }
 
     public void loadMealPlans(){

@@ -5,6 +5,8 @@ import com.google.android.material.tabs.TabLayout;
 import androidx.annotation.Nullable;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.softeng_grup6.vainsfitness.managers.UserInterfaceManager;
 import com.softeng_grup6.vainsfitness.ui.main.ConsumptionList;
 import com.softeng_grup6.vainsfitness.ui.main.Home_Profile_Fragment;
 import com.softeng_grup6.vainsfitness.ui.main.ProgressReport;
@@ -24,8 +26,12 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         adapter = new TabAdapter(getSupportFragmentManager());
         adapter.addFragment(new Home_Profile_Fragment(), "Home");
-        adapter.addFragment(new ConsumptionList(), "Meals");
-        adapter.addFragment(new ProgressReport(), "Report");
+        if(UserInterfaceManager.getLoggedInUserType().equals("client")){
+            adapter.addFragment(new ConsumptionList(), "Meals");
+            adapter.addFragment(new ProgressReport(), "Report");
+        }else if(UserInterfaceManager.getLoggedInUserType().equals("admin")){
+            adapter.addFragment(new ConsumptionList(), "Meal Plans");
+        }
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
     }

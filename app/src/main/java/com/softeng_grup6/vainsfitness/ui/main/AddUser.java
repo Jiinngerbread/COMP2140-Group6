@@ -89,9 +89,9 @@ public class AddUser extends AppCompatActivity {
                                     public void userAvailable() {
                                         Calendar c = Calendar.getInstance();
                                         Client client = new Client(firstname,lastname,age,new Date(c.get(Calendar.DAY_OF_MONTH),c.get(Calendar.MONTH),c.get(Calendar.YEAR)),username,password,email,gender,current_weight,height);
-                                        ArrayList<String> dummy_items = new ArrayList<>();
-                                        Report report = new Report(future_weight/current_weight*100.0);
+                                        Report report = new Report(current_weight);
                                         WorkOutPlan workOutPlan = new WorkOutPlan(future_weight,workout_time);
+                                        workOutPlan.generateEstDailyCalorConsumption();
                                         session.addNewClient(client,report,workOutPlan);
                                         userAcntHandler.setUserAccountAddListener(new NetSessionListener() {
                                             @Override

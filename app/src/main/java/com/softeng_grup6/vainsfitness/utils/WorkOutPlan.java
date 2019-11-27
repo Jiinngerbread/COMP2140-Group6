@@ -1,8 +1,11 @@
 package com.softeng_grup6.vainsfitness.utils;
 
+import com.softeng_grup6.vainsfitness.systems.ClientSystem;
+
 public class WorkOutPlan {
     private double expected_weight = 0;
     private  int timeToTake = 0;
+    private double estimatedDailyCalorieConsumption = 0;
 
     public WorkOutPlan(){}
 
@@ -19,12 +22,26 @@ public class WorkOutPlan {
         this.expected_weight = expected_weight;
     }
 
+    public double getEstimatedDailyCalorieConsumption() {
+        return estimatedDailyCalorieConsumption;
+    }
+
+    public void setEstimatedDailyCalorieConsumption(double estimatedDailyCalorieConsumption) {
+        this.estimatedDailyCalorieConsumption = estimatedDailyCalorieConsumption;
+    }
+
     public int getTimeToTake() {
         return timeToTake;
     }
 
     public void setTimeToTake(int timeToTake) {
         this.timeToTake = timeToTake;
+    }
+
+    public void generateEstDailyCalorConsumption(){
+        double weight_loss = ClientSystem.getClientProfile().getClientDetail().getWeight() - expected_weight;
+        double calorieloss = weight_loss * 3500;
+        this.estimatedDailyCalorieConsumption = (calorieloss/(weight_loss+timeToTake))*1.5;
     }
 
 }

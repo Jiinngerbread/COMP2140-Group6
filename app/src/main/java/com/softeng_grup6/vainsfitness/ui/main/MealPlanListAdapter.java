@@ -41,8 +41,8 @@ public class MealPlanListAdapter extends ArrayAdapter<MealPlan> {
         for(int a = 0; a <meal.getFood_items().size(); a++ ){
             meal_items = meal_items+meal.getFood_items().get(a)+"\n";
         }
-        items.setText(meal_items);
-        method.setText(meal.getMethod());
+        items.setText("Ingredients:\n"+meal_items);
+        method.setText("Method:\n"+meal.getMethod());
 
 
         return convertView;
