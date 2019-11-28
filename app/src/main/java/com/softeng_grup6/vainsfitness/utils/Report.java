@@ -87,6 +87,14 @@ public class Report {
         this.status = status;
     }
 
+    public int getNumWeightChange() {
+        return numWeightChange;
+    }
+
+    public void setNumWeightChange(int numWeightChange) {
+        this.numWeightChange = numWeightChange;
+    }
+
     public void generateDaysSinceCreation(){
         Calendar c = Calendar.getInstance();
         Date today = new Date(c.get(Calendar.DAY_OF_MONTH),c.get(Calendar.MONTH), c.get(Calendar.YEAR));
@@ -104,9 +112,10 @@ public class Report {
     }
 
     public void generateAverageWeightLoss(double newWeight){
-        this.avgDailyWeightLoss = ((this.avgDailyWeightLoss*this.numWeightChange)+newWeight)/(this.numWeightChange+1);
+        this.avgDailyWeightLoss = ((this.avgDailyWeightLoss*this.numWeightChange)+(ClientSystem.getClientProfile().getClientDetail().getWeight()- newWeight))/(this.numWeightChange+1);
         this.numWeightChange++;
     }
+
 
     public void generateAverageCalorieConsumption(){
         ArrayList<Consumption> consumptionlist = ClientSystem.getClientProfile().getUserConsumption().getTotalConsumption();

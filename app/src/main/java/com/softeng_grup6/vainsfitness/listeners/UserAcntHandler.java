@@ -10,6 +10,7 @@ public class UserAcntHandler {
     private NetSessionListener netSessionListener;
     private  ClientDetailListener clientDetailListener;
     private NetSessionListener netSessionListener2;
+    private NetSessionListener clientUpdateListener;
 
     public void setAccountCheckListener(UserAcntCheckListener userAcntCheckListener){
         this.userAcntCheckListener = userAcntCheckListener;
@@ -37,7 +38,19 @@ public class UserAcntHandler {
         this.netSessionListener2 = netSessionListener2;
     }
 
+
     public void consumptionUpdateSuccess(){netSessionListener2.succees();}
     public void consumptionUpdateFail(){netSessionListener2.unsuccessful();}
+
+    public void setClientUpdateListener(NetSessionListener clientUpdateListener){
+        this.clientUpdateListener = clientUpdateListener;
+    }
+    public void clientUpdateSuccess(){
+        clientUpdateListener.succees();
+    }
+    public void clientUpdateFail(){
+        clientUpdateListener.unsuccessful();
+    }
+
 
 }

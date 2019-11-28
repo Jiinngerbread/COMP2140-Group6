@@ -50,9 +50,9 @@ public class ProgressReport extends Fragment {
         Report profileReport = ClientSystem.getClientProfile().getProgressReport();
         float progress = Float.parseFloat(""+profileReport.getProgrssPercentage());
         progressView.setValue(progress);
-        weight_loss_disp.setText(""+profileReport.getWeightLoss());
+        weight_loss_disp.setText(""+profileReport.getWeightLoss()+" lb");
         total_days_disp.setText(""+profileReport.getTotalDays());
-        avg_daily_weight_loss_disp.setText(""+profileReport.getAvgDailyWeightLoss());
+        avg_daily_weight_loss_disp.setText(""+profileReport.getAvgDailyWeightLoss()+" lb");
         avg_daily_cal_disp.setText(""+profileReport.getAvgCalorieConsumption());
         status_disp.setText(""+profileReport.getStatus());
         switch ((int) profileReport.getStatus()){

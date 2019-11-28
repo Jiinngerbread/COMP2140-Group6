@@ -40,8 +40,9 @@ public class AddMealPlan extends AppCompatActivity {
 
         Calendar c = Calendar.getInstance();
         today = new Date(c.get(Calendar.DAY_OF_MONTH),c.get(Calendar.MONTH), c.get(Calendar.YEAR));
-
-        final MealPlanListAdapter mealPlanListAdapter = new MealPlanListAdapter(getApplicationContext(), ClientSystem.getClientProfile().getAdminMealPlans().getMealPlans());
+        ArrayList<MealPlan> mealPlans = ClientSystem.getClientProfile().getAdminMealPlans().getMealPlans();
+        mealPlans = filterMealPlans(mealPlans);
+        final MealPlanListAdapter mealPlanListAdapter = new MealPlanListAdapter(getApplicationContext(), mealPlans);
 
         mealList.setAdapter(mealPlanListAdapter);
 
@@ -96,6 +97,16 @@ public class AddMealPlan extends AppCompatActivity {
         });
 
     }
+    public ArrayList<MealPlan> filterMealPlans(ArrayList<MealPlan> mealPlans){
+        ArrayList<MealPlan> newMealPlans = new ArrayList<>();
+        for(int a = 0; a < mealPlans.size(); a++){
+            if(mealPlans.get(a).getCalorie() < (ClientSystem.getClientProfile().getWorkOutPlan().getEstimatedDailyCalorieConsumption()/3)){
+                newMealPlans.add(mealPlans.get(a));
+            }
+        }
+        return newMealPlans;
+    }
+
     public  void returnHome(){
         userAcntHandler.setConsumptionUpdateListener(null);
         Intent go = new Intent(getApplicationContext(), MainActivity.class);

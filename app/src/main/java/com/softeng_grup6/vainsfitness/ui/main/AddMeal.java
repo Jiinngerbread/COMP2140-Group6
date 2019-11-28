@@ -143,6 +143,7 @@ public class AddMeal extends AppCompatActivity {
                             meal_items.clear();
                             mealDescription.setText("");
                             mealDisplay.setText(display_text);
+                            mealDetails.setHint("Enter Meal name/item name then press add");
                            // Toast.makeText(AddMeal.this, "Network Issue", Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -192,13 +193,12 @@ public class AddMeal extends AppCompatActivity {
                     calorieAPI.getCalorie("addmealplan",meal_items);
                     calorieHandler.setOnCalorieFetchListener(new CalorieListener() {
                         @Override
-                        public void success(int calorie_value) {
+                        public void success(final int calorie_value) {
                             Calendar calendar = Calendar.getInstance();
                             Date todayDate = new Date(calendar.get(Calendar.DAY_OF_MONTH), calendar.get(Calendar.MONTH), calendar.get(Calendar.YEAR));
                             Meal meal = new Meal(meal_name,meal_items,calorie_value);
-                            Toast.makeText(AddMeal.this, ""+meal.getName(), Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(AddMeal.this, ""+meal.getName(), Toast.LENGTH_SHORT).show();
                             ClientSystem.getClientProfile().getUserConsumption().addTodaysMeal(todayDate,meal);
-                            Toast.makeText(AddMeal.this, "Total Calorie: "+ClientSystem.getClientProfile().getUserConsumption().getTodaysConsumption(todayDate).getTotalCalorie(), Toast.LENGTH_SHORT).show();
                             ConsumptionManager consumptionManager = ClientSystem.getClientProfile().getUserConsumption();
                             NetworkManager session  = new NetworkManager();
                             session.setNetContext(getApplicationContext());
@@ -206,7 +206,13 @@ public class AddMeal extends AppCompatActivity {
                             userAcntHandler.setConsumptionUpdateListener(new NetSessionListener() {
                                 @Override
                                 public void succees() {
-                                    Toast.makeText(AddMeal.this, "Successfully Added", Toast.LENGTH_SHORT).show();
+                                    if(calorie_value > (ClientSystem.getClientProfile().getWorkOutPlan().getEstimatedDailyCalorieConsumption()/3)){
+                                        //warn user
+                                        Toast.makeText(AddMeal.this, "Calories "+calorie_value+" : \nFood item exceeds the recommended number of calories required for today", Toast.LENGTH_LONG).show();
+                                    }else{
+                                        //alert user that they are ok
+                                        Toast.makeText(AddMeal.this, "Calories "+calorie_value+" : \nFood item is within the recommended number of calories required for today", Toast.LENGTH_SHORT).show();
+                                    }
                                     returnHome();
                                 }
 
@@ -225,6 +231,7 @@ public class AddMeal extends AppCompatActivity {
                             meal_items.clear();
                             mealDescription.setText("");
                             mealDisplay.setText(display_text);
+                            mealDetails.setHint("Enter Meal name/item name then press add");
                             // Toast.makeText(AddMeal.this, "Network Issue", Toast.LENGTH_SHORT).show();
                         }
                     });

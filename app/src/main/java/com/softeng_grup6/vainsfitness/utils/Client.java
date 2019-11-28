@@ -1,5 +1,7 @@
 package com.softeng_grup6.vainsfitness.utils;
 
+import com.softeng_grup6.vainsfitness.systems.ClientSystem;
+
 public class Client extends User{
     private double weight = 0;
     private double height =0;

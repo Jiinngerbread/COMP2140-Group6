@@ -24,6 +24,7 @@ import com.softeng_grup6.vainsfitness.systems.ClientSystem;
 import com.softeng_grup6.vainsfitness.ui.main.AddMeal;
 import com.softeng_grup6.vainsfitness.ui.main.AddMealPlan;
 import com.softeng_grup6.vainsfitness.ui.main.AddUser;
+import com.softeng_grup6.vainsfitness.ui.main.ChangeWeight;
 import com.softeng_grup6.vainsfitness.ui.main.RemoveMeal;
 import com.softeng_grup6.vainsfitness.utils.Admin;
 import com.softeng_grup6.vainsfitness.utils.Client;
@@ -294,5 +295,37 @@ public class NetworkManager {
                 }
             });
         }
+    }
+
+    public void updateClient(final Client client, final Report report, final WorkOutPlan workOutPlan, final ConsumptionManager consumptionManager){
+        client.getId().set(client)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        client.getId().collection("Details").document("report")
+                                .set(report);
+                        client.getId().collection("Details").document("workoutplan")
+                                .set(workOutPlan);
+                        client.getId().collection("Details").document("consumption")
+                                .set(consumptionManager).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                ChangeWeight.clientUpdateHandler.clientUpdateSuccess();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                ChangeWeight.clientUpdateHandler.clientUpdateFail();
+                            }
+                        });
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                ChangeWeight.clientUpdateHandler.clientUpdateFail();
+            }
+        });
+
     }
 }

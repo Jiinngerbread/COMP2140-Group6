@@ -40,7 +40,7 @@ public class Login extends AppCompatActivity {
 //        NetworkManager net = new NetworkManager();
 //        net.addAdmin();
         authenticator = new UserManager(getBaseContext());
-        //authenticator.authenticate("john","password");
+        authenticator.authenticate("john","password");
 
         slogin.setOnClickListener(new View.OnClickListener() {
             @Override

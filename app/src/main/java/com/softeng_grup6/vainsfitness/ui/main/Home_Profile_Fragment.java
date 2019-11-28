@@ -67,7 +67,7 @@ public class Home_Profile_Fragment extends Fragment {
         if(UserInterfaceManager.getLoggedInUserType().equals("admin")){
             adminConfiguration();
         }else if(UserInterfaceManager.getLoggedInUserType().equals("client")){
-            clientConfiguration();
+           clientConfiguration();
         }
         return view;
     }
@@ -120,6 +120,7 @@ public class Home_Profile_Fragment extends Fragment {
     }
 
     private void clientConfiguration(){
+        Toast.makeText(getContext(), "# Remember to update your Body Weight", Toast.LENGTH_SHORT).show();
         ClientSystem.getClientProfile().getProgressReport().generateReport();
         //Toast.makeText(getContext(), "Reportdata: "+ ClientSystem.getClientProfile().getWorkOutPlan().getEstimatedDailyCalorieConsumption(), Toast.LENGTH_SHORT).show();
         Calendar c = Calendar.getInstance();
@@ -130,9 +131,11 @@ public class Home_Profile_Fragment extends Fragment {
 //        addMealPlan.setVisibility(View.GONE);
         disp_name.setText(clientProfile.getFullName());
         Consumption todayConsumption = ClientSystem.getClientProfile().getUserConsumption().getTodaysConsumption(today);
+        double totalCal = 0;
         if(todayConsumption != null){
             disp_calorie.setText(""+todayConsumption.getTotalCalorie());
             disp_num_meal.setText(""+todayConsumption.getMeal_list().size());
+            totalCal = todayConsumption.getTotalCalorie();
         }else{
             disp_calorie.setText("0");
             disp_num_meal.setText("0");
@@ -141,7 +144,7 @@ public class Home_Profile_Fragment extends Fragment {
         disp_age.setText("Age: "+clientProfile.getAge());
         disp_gender.setText("Gender: "+clientProfile.getGender());
         disp_goal.setText("Goal: "+ClientSystem.getClientProfile().getWorkOutPlan().getExpected_weight()+" lb");
-        float progress = Float.parseFloat(""+((todayConsumption.getTotalCalorie()/ClientSystem.getClientProfile().getWorkOutPlan().getEstimatedDailyCalorieConsumption())*100));
+        float progress = Float.parseFloat(""+((totalCal/ClientSystem.getClientProfile().getWorkOutPlan().getEstimatedDailyCalorieConsumption())*100));
 
         progressView.setValue(progress);
 
